@@ -1,0 +1,38 @@
+﻿<controls:MetroWindow x:Class="MahAppBase.CustomerUserControl.ShowLogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="ShowLogWindow" Height="450" Width="850">
+    <Grid>
+        <DataGrid ItemsSource="{Binding ExcuteLogCollection}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="執行時間" Binding="{Binding ExcuteDateTime}" Width="180"/>
+                <DataGridTextColumn Header="開始時間" Binding="{Binding StartDateTime}" Width="180"/>
+                <DataGridTextColumn Header="結束時間" Binding="{Binding EndDateTime}" Width="180"/>
+                <DataGridTextColumn Header="花費時間" Binding="{Binding CostTime}" Width="100"/>
+                <DataGridTextColumn Header="異動項目數量" Binding="{Binding ModifyItemCount}" Width="100"/>
+                <DataGridTextColumn Header="是否正常" Binding="{Binding IsSuccess}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="Text" Value="Success">
+                                    <Setter Property="Background" Value="LightGreen"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    
+                                </Trigger>
+                                <Trigger Property="Text" Value="Fail">
+                                    <Setter Property="Background" Value="Red"/>
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</controls:MetroWindow>

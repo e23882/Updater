@@ -69,11 +69,22 @@
     </ApplicationDefinition>
     <Compile Include="Command\CommonCommand.cs" />
     <Compile Include="Command\NoParameterCommand.cs" />
+    <Compile Include="CustomerUserControl\ShowLogWindow.xaml.cs">
+      <DependentUpon>ShowLogWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomerUserControl\ucDonate.xaml.cs">
       <DependentUpon>ucDonate.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\ExcuteLog.cs" />
+    <Compile Include="Model\ExcutingTask.cs" />
+    <Compile Include="Model\TaskItem.cs" />
     <Compile Include="ViewModel\MainComponent.cs" />
+    <Compile Include="ViewModel\ShowLogViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Page Include="CustomerUserControl\ShowLogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomerUserControl\ucDonate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,7 +144,6 @@
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Image\Donate.jpg" />
   </ItemGroup>

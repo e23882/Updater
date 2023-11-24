@@ -1,5 +1,4 @@
-﻿using MahAppBase.ViewModel;
-using MahApps.Metro.Controls;
+﻿using MahApps.Metro.Controls;
 
 namespace MahAppBase
 {
@@ -8,14 +7,9 @@ namespace MahAppBase
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        #region Declarations
-
-        #endregion
 
         #region Property
-
         public MainComponent MainViewModel { get; set; }
-
         #endregion
 
         #region MemberFunction
@@ -26,7 +20,6 @@ namespace MahAppBase
             MainViewModel = new MainComponent();
             this.DataContext = MainViewModel;
         }
-
         #endregion
     }
 }
